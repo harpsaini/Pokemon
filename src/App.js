@@ -1,13 +1,12 @@
-import PokemonList from './PokemonList';
+
 import './App.css';
-import Search from './search';
+import Search from './Search';
 
 function App() {
   return (
   <div className="App">
     <h1>Pokemon</h1>
     <Search/>
-    <PokemonList/>
   </div>
   )
 }

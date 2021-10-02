@@ -7,17 +7,17 @@ import { useState, useEffect } from "react";
 import Pokemon from "./Pokemons";
 
 
-const PokemonList = () =>{
+const PokemonList = (props) =>{
   const [displayPokemons,setDisplayPokemons] = useState([]);
       useEffect(()=>{
-        fetch( 'https://pokeapi.co/api/v2/type/3')
+        fetch( `https://pokeapi.co/api/v2/type/${props.selectedInput}`)
        .then((res)=>res.json())
        .then((jsonData)=>{
         setDisplayPokemons(jsonData.pokemon)  
         });
-      },[]);  
+      },[props]);  
   return(
-   <div className="cardContainer">
+   <div className="flexContainer">
     {
       displayPokemons.map((individualPokemon,index)=>{
         return (  

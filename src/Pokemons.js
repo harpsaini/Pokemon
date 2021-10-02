@@ -6,14 +6,19 @@ import './App.css';
 const Pokemon = (props) =>{
   
 const [image, setImage] = useState();
+const [type, setType] = useState();
+useEffect(()=>{
   axios({
     url:props.url,
     method:"GET",
     dataResponse:"json",
   }).then((response)=>{
+    // console.log(response);
     setImage(response.data.sprites.front_default);
+    setType(response.data.types)
   })
-
+},[props])  
+// console.log(type);
   return(
       <div className="card">
         <img src={image} alt={props.name} />
@@ -25,4 +30,8 @@ const [image, setImage] = useState();
 export default Pokemon;
 
 // this will take the url and make another fetch call to Pokemon endpoint 
-// display image 
+// 
+
+// returned data has a type value 
+// display only if the display value matches what the user clicked on the second list. 
+
