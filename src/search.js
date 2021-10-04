@@ -2,57 +2,56 @@ import {useState} from 'react'
 import PokemonList from './PokemonList';
 
 function Search (){
-  const [formInput, setFormInput]=useState()
-
+  const [formInput, setFormInput]=useState([])
+  
   function handleClick (event){
-    // console.log(event.target.value);
-    // let userInputArray = []
-    // userInputArray.push(event.target.value);
-    setFormInput(event.target.value);    
+    let grabbedInput = event.target.value;   
+    setFormInput([...formInput, grabbedInput]);
   }
-
   return(
    <form>
-     <ul>
+     <ul >
      <li>
        <label htmlFor="water">water</label>
-       <input type="checkbox" id="water" name="pokemonType" value="water" onChange={handleClick} />
+       <input type="checkbox" id="water" name="pokemonType" value="water" onClick={handleClick}/>
      </li>
 
      <li>
        <label htmlFor="fire">fire</label>
-       <input type="checkbox" id="fire" name="pokemonType" value="fire" onChange={handleClick}/>
+       <input type="checkbox" id="fire" name="pokemonType" value="fire" onClick={handleClick} />
      </li>
      <li>
        <label htmlFor="electric">electric</label>
-       <input type="checkbox" id="electric" name="pokemonType" value="electric" onChange={handleClick}/>
+       <input type="checkbox" id="electric" name="pokemonType" value="electric" onClick={handleClick}/>
      </li>
      <li>
        <label htmlFor="rock">rock</label>
-       <input type="checkbox" id="rock" name="pokemonType" value="rock" onChange={handleClick}/>
+       <input type="checkbox" id="rock" name="pokemonType" value="rock" onClick={handleClick}/>
      </li>
      </ul>
      <ul>
      <li>
        <label htmlFor="poison">poison</label>
-       <input type="checkbox" id="poison" name="pokemonType" value="poison" onChange={handleClick}/>
+       <input type="checkbox" id="poison" name="pokemonType" value="poison" onClick={handleClick}/>
      </li>
      <li>
        <label htmlFor="fighting">fighting</label>
-       <input type="checkbox" id="fighting" name="pokemonType" value="fighting" onChange={handleClick}/>
+       <input type="checkbox" id="fighting" name="pokemonType" value="fighting" onClick={handleClick}/>
      </li>
      <li>
        <label htmlFor="flying">flying</label>
-       <input type="checkbox" id="flying" name="pokemonType" value="flying" onChange={handleClick}/>
+       <input type="checkbox" id="flying" name="pokemonType" value="flying" onClick={handleClick}/>
      </li>
      <li>
        <label htmlFor="psychic">psychic</label>
-       <input type="checkbox" id="psychic" name="pokemonType" value="psychic" onChange={handleClick}/>
+       <input type="checkbox" id="psychic" name="pokemonType" value="psychic" onClick={handleClick}/>
      </li>
      </ul>
      {
        <PokemonList
-        selectedInput = {formInput}/> 
+        selectedInput = {formInput}
+        selectedType = {formInput}
+       /> 
      }
    </form>   
 )}

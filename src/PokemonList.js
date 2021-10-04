@@ -2,20 +2,25 @@
 
 //  url will be passed to Pokemons as props to make another api call 
 
-
 import { useState, useEffect } from "react";
 import Pokemon from "./Pokemons";
 
 
 const PokemonList = (props) =>{
   const [displayPokemons,setDisplayPokemons] = useState([]);
+  const [filteredPokemonList, setFilteredPokemonList] = useState([])
+
+  
       useEffect(()=>{
-        fetch( `https://pokeapi.co/api/v2/type/${props.selectedInput}`)
+        let firstUserInput = props.selectedInput;
+        console.log(firstUserInput);
+        fetch( `https://pokeapi.co/api/v2/type/${firstUserInput}`)
        .then((res)=>res.json())
        .then((jsonData)=>{
-        setDisplayPokemons(jsonData.pokemon)  
+        setDisplayPokemons(jsonData.pokemon)
         });
       },[props]);  
+
   return(
    <div className="flexContainer">
     {
@@ -34,3 +39,5 @@ const PokemonList = (props) =>{
 
 export default PokemonList;
 
+// create a second state which will comtain the list of the filtered pokemon using filter 
+// map through the second array to display pokemons, 

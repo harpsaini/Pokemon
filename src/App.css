@@ -46,10 +46,12 @@ form ul li{
   text-transform: uppercase;
 }
 
-form ul li input{
+form ul li:active{
+  background-color: darkcyan;
+}
+
+
+input{
   opacity: 0;
 }
 
-form ul li input:active{
-  background-color: tomato;
-}

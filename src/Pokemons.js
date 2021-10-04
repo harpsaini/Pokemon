@@ -13,17 +13,16 @@ useEffect(()=>{
     method:"GET",
     dataResponse:"json",
   }).then((response)=>{
-    // console.log(response);
-    setImage(response.data.sprites.front_default);
+    // console.log(response.data.types[1].type.name);               
     setType(response.data.types)
-  })
+    setImage(response.data.sprites.front_default); 
+    })  
 },[props])  
-// console.log(type);
   return(
-      <div className="card">
-        <img src={image} alt={props.name} />
-        <h2>{props.name}</h2>
-      </div>
+  <div className="card">
+    <img src={image} alt={props.name} />
+    <h2>{props.name}</h2>
+  </div>
   )
 }
 
