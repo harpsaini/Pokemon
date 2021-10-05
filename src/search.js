@@ -2,11 +2,10 @@ import {useState} from 'react'
 import PokemonList from './PokemonList';
 
 function Search (){
-  const [formInput, setFormInput]=useState([])
+  const [formInput, setFormInput]=useState()
   
-  function handleClick (event){
-    let grabbedInput = event.target.value;   
-    setFormInput([...formInput, grabbedInput]);
+  function handleClick (event){  
+    setFormInput(event.target.value);
   }
   return(
    <form>
@@ -50,7 +49,6 @@ function Search (){
      {
        <PokemonList
         selectedInput = {formInput}
-        selectedType = {formInput}
        /> 
      }
    </form>   
