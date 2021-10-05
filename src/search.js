@@ -7,6 +7,7 @@ function Search (){
   function handleClick (event){  
     setFormInput(event.target.value);
   }
+  
   return(
    <form>
      <ul >
