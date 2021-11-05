@@ -18,8 +18,8 @@ const PokemonList = (props) =>{
 
       // this will update the state after filtering the array using name as parameter 
     const handleCatchingPokemon= (event)=>{
-      let caughtPokemon = event.target.alt;
-      let arrayofcaughtPokemons = Pokemons.filter((pokemon)=>{
+      const caughtPokemon = event.target.alt;
+      const arrayofcaughtPokemons = Pokemons.filter((pokemon)=>{
         return caughtPokemon !== pokemon.pokemon.name
       })
 

@@ -7,45 +7,29 @@ function Search (){
   function handleClick (event){  
     setFormInput(event.target.value);
   }
+
+  function createInputs(props){
+    return(
+      <>
+        <label htmlFor={props}>{props}</label>
+        <input type="checkbox" id={props} name="pokemonType" value={props} onClick={handleClick}/>
+      </>
+    )
+  }
   
   return(
    <form>
-     <ul >
-     <li>
-       <label htmlFor="water">water</label>
-       <input type="checkbox" id="water" name="pokemonType" value="water" onClick={handleClick}/>
-     </li>
-
-     <li>
-       <label htmlFor="fire">fire</label>
-       <input type="checkbox" id="fire" name="pokemonType" value="fire" onClick={handleClick} />
-     </li>
-     <li>
-       <label htmlFor="electric">electric</label>
-       <input type="checkbox" id="electric" name="pokemonType" value="electric" onClick={handleClick}/>
-     </li>
-     <li>
-       <label htmlFor="rock">rock</label>
-       <input type="checkbox" id="rock" name="pokemonType" value="rock" onClick={handleClick}/>
-     </li>
+     <ul>
+      { <li>{createInputs('water')}</li>}
+      { <li>{createInputs('Fire')}</li>}
+      { <li>{createInputs('Electric ')}</li>}
+      { <li>{createInputs('Rock')}</li>}
      </ul>
      <ul>
-     <li>
-       <label htmlFor="poison">poison</label>
-       <input type="checkbox" id="poison" name="pokemonType" value="poison" onClick={handleClick}/>
-     </li>
-     <li>
-       <label htmlFor="fighting">fighting</label>
-       <input type="checkbox" id="fighting" name="pokemonType" value="fighting" onClick={handleClick}/>
-     </li>
-     <li>
-       <label htmlFor="flying">flying</label>
-       <input type="checkbox" id="flying" name="pokemonType" value="flying" onClick={handleClick}/>
-     </li>
-     <li>
-       <label htmlFor="psychic">psychic</label>
-       <input type="checkbox" id="psychic" name="pokemonType" value="psychic" onClick={handleClick}/>
-     </li>
+      { <li>{createInputs('poison')}</li>}
+      { <li>{createInputs('fighting')}</li>}
+      { <li>{createInputs('flying ')}</li>}
+      { <li>{createInputs('psychic')}</li>}
      </ul>
      {
        <PokemonList

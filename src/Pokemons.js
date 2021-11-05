@@ -16,10 +16,13 @@ useEffect(()=>{
     })    
 },[url])  
   return(
-  <div className="card">
-    <img src={image} alt={name} />
-    <h2>{name}</h2>
-  </div>
+  
+      <div className="card">
+        <img src={image} alt={name} />
+        <h2>{name}</h2>
+        
+      </div>
+    
   )
 }
 

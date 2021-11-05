@@ -28,6 +28,9 @@ body{
   height: 100vh;
 }
 
+header{
+  color:rgb(158, 235, 207) ;
+}
 h1{
   color: rgb(158, 235, 207);
   font-size: 5rem;
@@ -37,6 +40,7 @@ h1{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .card{
