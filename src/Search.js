@@ -21,9 +21,9 @@ function Search (){
    <form>
      <ul>
       { <li>{createInputs('water')}</li>}
-      { <li>{createInputs('Fire')}</li>}
-      { <li>{createInputs('Electric ')}</li>}
-      { <li>{createInputs('Rock')}</li>}
+      { <li>{createInputs('fire')}</li>}
+      { <li>{createInputs('electric ')}</li>}
+      { <li>{createInputs('rock')}</li>}
      </ul>
      <ul>
       { <li>{createInputs('poison')}</li>}

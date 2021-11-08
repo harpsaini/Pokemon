@@ -1,28 +1,28 @@
-import { useEffect,useState } from "react"
+import { useEffect,useState,useContext } from "react"
 import axios from "axios";
 import './App.css';
-
+import {Link} from 'react-router-dom'
 
 const Pokemon = ({name,url}) =>{
 
 const [image, setImage] = useState();
+
 useEffect(()=>{
   axios({
     url:url ,
     method:"GET",
     dataResponse:"json",
-  }).then((response)=>{         
+  }).then((response)=>{      
     setImage(response.data.sprites.front_default); 
     })    
 },[url])  
   return(
-  
+    <Link className="links" to={`/pokemon/${name}`}>
       <div className="card">
         <img src={image} alt={name} />
-        <h2>{name}</h2>
-        
+        <p>{name}</p>
       </div>
-    
+    </Link>
   )
 }
 
