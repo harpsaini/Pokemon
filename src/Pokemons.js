@@ -16,6 +16,8 @@ useEffect(()=>{
     setImage(response.data.sprites.front_default); 
     })    
 },[url])  
+
+
   return(
     <Link className="links" to={`/pokemon/${name}`}>
       <div className="card">

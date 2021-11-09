@@ -16,7 +16,7 @@ function App() {
     </header>
     <Search/>
     <Routes>
-      <Route path = '/pokemon/:pokemonID' element= {<ModalComponent/>}/> 
+      <Route path = '/pokemon/:pokemonID' element= {<ModalComponent/>}/>
     </Routes>
     <Footer/>
   </div>
