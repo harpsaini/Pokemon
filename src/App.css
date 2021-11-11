@@ -9,10 +9,15 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+:root{
+  --primaryColor : rgb(158, 235, 207);
+
+}
 
 body{
   background:  linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%);
   font-size: 125%;
+  
 }
 
 img{
@@ -34,12 +39,17 @@ img{
 }
 
 header{
-  color:rgb(158, 235, 207) ;
+  color:var(--primaryColor);
 }
 
-h1{
-  color: rgb(158, 235, 207);
-  font-size: 5rem;
+header div{
+  position: absolute;
+  right: 2rem;
+  top: 0;
+}
+
+.savedPokemonButton{
+  text-decoration: none;
 }
 
 .flexContainer{
@@ -53,16 +63,21 @@ h1{
   text-decoration: none;
   color: black;
 }
+
+.reactLinks{
+  color: var(--primaryColor);
+  text-decoration: none;
+}
+
 .card{
   width: 10rem;
-  background-color:rgb(158, 235, 207);
+  background-color:var(--primaryColor);
   height: 15rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .card:hover{
   width: 11rem;
@@ -78,7 +93,8 @@ form ul{
 
 form ul li{
   list-style: none;
-  background-color: rgb(158, 235, 207) ;
+  background-color: var(--primaryColor);
+  color: black;
   padding: .5rem;
   text-transform: uppercase;
 }
@@ -92,9 +108,8 @@ form ul li:hover
 input{
   opacity: 0;
 }
-
 footer{
-  color: rgb(158, 235, 207);
+  color: var(--primaryColor);
 }
 
 @media screen and (max-width: 600px){

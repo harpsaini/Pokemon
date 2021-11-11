@@ -1,28 +1,14 @@
-import { useEffect,useState } from "react"
-import axios from "axios";
+
 import './App.css';
 import {Link} from 'react-router-dom'
 
-const Pokemon = ({name,url}) =>{
-
-const [image, setImage] = useState();
-
-useEffect(()=>{
-  axios({
-    url:url ,
-    method:"GET",
-    dataResponse:"json",
-  }).then((response)=>{      
-    setImage(response.data.sprites.front_default); 
-    })    
-},[url])  
-
+const Pokemon = ({pokemonObject}) =>{
 
   return(
-    <Link className="links" to={`/pokemon/${name}`}>
+    <Link className="links" to={`/pokemon/${pokemonObject.name}`}>
       <div className="card">
-        <img src={image} alt={name} />
-        <p>{name}</p>
+        <img src={pokemonObject.sprites.front_default} alt={pokemonObject.name} />
+        <p>{pokemonObject.name}</p>
       </div>
     </Link>
   )
@@ -30,7 +16,6 @@ useEffect(()=>{
 
 export default Pokemon;
 
-// this will take the url and make another fetch call to Pokemon endpoint 
-// 
+
 
 
