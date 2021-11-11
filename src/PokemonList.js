@@ -18,19 +18,19 @@ const PokemonList = (props) =>{
     },[props]);  // dependecy array is watches the changes to the props as a result of user selection change. 
    
     useEffect(()=>{
-    const newArray = [];
-    Pokemons.map((individualPokemon)=>{
-      const url = individualPokemon.pokemon.url;
-      axios({
-        url:url ,
-        method:"GET",
-        dataResponse:"json",
-      }).then((res)=>{      
-        // setImage(response.data.sprites.front_default); 
-        newArray.push(res.data)
-        setFinalApiRes([...newArray])
-      })    
-    })
+      const newArray = [];
+      Pokemons.map((individualPokemon)=>{
+        const url = individualPokemon.pokemon.url;
+        axios({
+          url:url ,
+          method:"GET",
+          dataResponse:"json",
+        }).then((res)=>{      
+          // setImage(response.data.sprites.front_default); 
+          newArray.push(res.data)
+          return setFinalApiRes([...newArray])
+        })    
+      })
   },[Pokemons]) 
   
   return(

@@ -28,7 +28,7 @@ const SavedPokemon = () => {
     { 
     pokemonObjInFirebase.map((individualPokemon,index)=>{
       return (  
-        <li key={index}>
+        <li className="card" key={index}>
           <Pokemon            
             pokemonObject = {individualPokemon}
           /> 
