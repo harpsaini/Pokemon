@@ -28,8 +28,9 @@ const PokemonList = (props) =>{
         }).then((res)=>{      
           // setImage(response.data.sprites.front_default); 
           newArray.push(res.data)
-          return setFinalApiRes([...newArray])
+         setFinalApiRes([...newArray])
         })    
+        return newArray
       })
   },[Pokemons]) 
   
