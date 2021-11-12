@@ -1,5 +1,4 @@
 
-import Pokemon from "./Pokemons"
 import firebase from "./firebase"
 import { getDatabase,ref, onValue } from 'firebase/database';
 import { useState, useEffect } from "react";
@@ -27,7 +26,7 @@ const SavedPokemon = () => {
     pokemonObjInFirebase.map((individualPokemon,index)=>{
       return (  
         <li className="card" key={index}>
-          <img src={individualPokemon.sprites.front_default}/>
+          <img src={individualPokemon.sprites.front_default} alt={individualPokemon.name}/>
           <p>{individualPokemon.name}</p> 
         </li> 
         )
