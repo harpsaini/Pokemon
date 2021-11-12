@@ -13,7 +13,6 @@ function App() {
     <div className="App wrapper">
       <header>
         <Link className="reactLinks" to = '/'><h1>Pokemon</h1></Link>
-        <p>Click Pokemon to Catch</p>
         <div >
           <Link className="reactLinks" to='/savedpokemons'><p>Saved Pokemons</p></Link>
         </div>

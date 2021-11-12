@@ -18,6 +18,8 @@ function Search (){
   }
   
   return(
+  <>
+  <h2>Click to catch Pokemon</h2>
    <form>
      <ul>
       { <li>{createInputs('water')}</li>}
@@ -33,10 +35,11 @@ function Search (){
      </ul>
      {
        <PokemonList
-        selectedInput = {formInput}
+       selectedInput = {formInput}
        /> 
-     }
+      }
    </form>   
+  </>
 )}
 
 export default Search

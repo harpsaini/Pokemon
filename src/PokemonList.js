@@ -1,4 +1,4 @@
-// takes in user selected option to make an api call to get the desired pokemon name and url 
+// takes in user selected option to make an api call to get pokemons of the type and makes another api call to get information about each pokemon. 
 
 import { useState, useEffect } from "react";
 import Pokemon from "./Pokemons";

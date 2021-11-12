@@ -4,8 +4,6 @@ import firebase from "./firebase"
 import { getDatabase,ref, onValue } from 'firebase/database';
 import { useState, useEffect } from "react";
 
-
-
 const SavedPokemon = () => {
   const [pokemonObjInFirebase, setPokemonObjInFirebase] = useState([]);
   const database = getDatabase(firebase);
@@ -29,9 +27,8 @@ const SavedPokemon = () => {
     pokemonObjInFirebase.map((individualPokemon,index)=>{
       return (  
         <li className="card" key={index}>
-          <Pokemon            
-            pokemonObject = {individualPokemon}
-          /> 
+          <img src={individualPokemon.sprites.front_default}/>
+          <p>{individualPokemon.name}</p> 
         </li> 
         )
       }) 
