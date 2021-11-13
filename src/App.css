@@ -49,7 +49,7 @@ header div{
 }
 
 .savedPokemonButton{
-  text-decoration: none;
+  font-style: italic;
 }
 
 .flexContainer{
@@ -67,6 +67,10 @@ header div{
 .reactLinks{
   color: var(--primaryColor);
   text-decoration: none;
+}
+
+.savedPokemonButton{
+  
 }
 
 .card{
@@ -121,6 +125,8 @@ footer{
   h1{
     font-size: 3rem;
   }
-
+  header div{
+    position: static;
+  }
 }
 

@@ -14,7 +14,7 @@ function App() {
       <header>
         <Link className="reactLinks" to = '/'><h1>Pokemon</h1></Link>
         <div >
-          <Link className="reactLinks" to='/savedpokemons'><p>Saved Pokemons</p></Link>
+          <Link className="reactLinks savedPokemonButton" to='/savedpokemons'><p>Saved Pokemons</p></Link>
         </div>
       </header>
     <Routes>
