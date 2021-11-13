@@ -9,8 +9,6 @@ const PokemonList = (props) =>{
   const [Pokemons,setPokemon] = useState([]); 
   const [finalApiRes, setFinalApiRes] = useState([]);
   
-  const PokemonContext = React.createContext(finalApiRes);
-
     useEffect(()=>{
       fetch( `https://pokeapi.co/api/v2/type/${props.selectedInput}`)
       .then((res)=>res.json())
