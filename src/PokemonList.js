@@ -1,6 +1,6 @@
 // takes in user selected option to make an api call to get pokemons of the type and makes another api call to get information about each pokemon. 
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import Pokemon from "./Pokemons";
 import axios from "axios";
 
@@ -9,6 +9,8 @@ const PokemonList = (props) =>{
   const [Pokemons,setPokemon] = useState([]); 
   const [finalApiRes, setFinalApiRes] = useState([]);
   
+  const PokemonContext = React.createContext(finalApiRes);
+
     useEffect(()=>{
       fetch( `https://pokeapi.co/api/v2/type/${props.selectedInput}`)
       .then((res)=>res.json())
