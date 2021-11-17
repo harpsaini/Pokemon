@@ -3,12 +3,12 @@
 import React, { useState, useEffect} from "react";
 import Pokemon from "./Pokemons";
 import axios from "axios";
-
+import {Link} from 'react-router-dom'
 
 const PokemonList = (props) =>{
   const [Pokemons,setPokemon] = useState([]); 
   const [finalApiRes, setFinalApiRes] = useState([]);
-  
+   
     useEffect(()=>{
       fetch( `https://pokeapi.co/api/v2/type/${props.selectedInput}`)
       .then((res)=>res.json())
@@ -33,21 +33,25 @@ const PokemonList = (props) =>{
         return newArray
       })
   },[Pokemons]) 
-  
+
   return(
-    <ul className="flexContainer" > 
-      { 
-      finalApiRes.map((individualPokemon,index)=>{
+    <>
+      <ul className="flexContainer" > 
+        { 
+        finalApiRes.map((individualPokemon,index)=>{
           return (  
-              <li key={index}>
-                  <Pokemon            
-                    pokemonObject = {individualPokemon}
+            <li key={index}>
+              <Link className="links" to={`/pokemon/${individualPokemon.name}`}>
+                <Pokemon            
+                  pokemonObject = {individualPokemon}
                   />
-              </li> 
-          )
-        }) 
-      }
-    </ul>
+              </Link>
+            </li> 
+            )
+          }) 
+        }
+      </ul>
+    </>
   )
 }
 

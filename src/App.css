@@ -14,6 +14,10 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 }
 
+li{
+  list-style: none;
+}
+
 body{
   background:  linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%);
   font-size: 125%;  
@@ -44,6 +48,7 @@ header{
 h1{
   font-size: 5rem;
 }
+
 header div{
   position: absolute;
   right: 2rem;
@@ -69,10 +74,6 @@ header div{
 .reactLinks{
   color: var(--primaryColor);
   text-decoration: none;
-}
-
-.savedPokemonButton{
-  
 }
 
 .card{
@@ -121,6 +122,20 @@ input{
 }
 footer{
   color: var(--primaryColor);
+}
+
+.modalStyles{
+  background-color: white;
+  color: #000;
+  position: relative;
+  min-height: 25rem;
+}
+
+.modalCloseButton{
+  position: absolute;
+  top:1px;
+  right: 7px;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 600px){

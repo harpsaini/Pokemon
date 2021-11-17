@@ -1,11 +1,10 @@
 
 import './App.css';
-import Search from './Search';
-import Footer from './Footer';
+import Search from './components/Search';
+import Footer from './components/Footer';
 import {BrowserRouter as Router, Routes, Route,Link} from 'react-router-dom'
-import ModalComponent from './ModalComponent'
-import SavedPokemon from './SavedPokemon';
-
+import ModalComponent from './components/ModalComponent'
+import SavedPokemon from './components/SavedPokemon';
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
         </div>
       </header>
     <Routes>
-      <Route exact path='/' element={<Search/>}/>  
+      <Route exact path='/' element={<Search/>}/>   
       <Route path = '/savedpokemons' element={<SavedPokemon/>}/>
       <Route path = '/pokemon/:pokemonID' element= {<ModalComponent/>}/>
     </Routes>

@@ -33,12 +33,12 @@ function Search (){
       { <li>{createInputs('flying ')}</li>}
       { <li>{createInputs('psychic')}</li>}
      </ul>
-     {
-       <PokemonList
-       selectedInput = {formInput}
-       /> 
-      }
-   </form>   
+   </form>  
+   {
+     <PokemonList
+     selectedInput = {formInput}
+     /> 
+    }
   </>
 )}
 

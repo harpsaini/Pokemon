@@ -1,14 +1,11 @@
-import Modal from "react-modal"
 import { useState,useEffect} from "react";
-import { Link,useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import firebase from './firebase';
+import firebase from '../firebase';
 import { getDatabase,ref, push } from 'firebase/database';
 
 const ModalComponent = () => {
- 
   const {pokemonID} = useParams(); 
-  const [ModalIsOpen, SetModalIsOpen]= useState(true);
   const [PokemonInfo, setPokemonInfo] = useState([]);
   
   const database = getDatabase(firebase);
@@ -25,9 +22,6 @@ const ModalComponent = () => {
     })
   },[pokemonID])
 
-  const handleModalClosing = () => {
-    SetModalIsOpen(false)
-  }
 // this functions adds the pokemons list saved on firebase. 
   const handleCatchingPokemon = () => {
     push(dbRef, PokemonInfo);
@@ -35,16 +29,15 @@ const ModalComponent = () => {
   }
 
   return(
-    <Modal 
-    isOpen={ModalIsOpen} 
-    shouldCloseOnEsc={true}>
-      <h2>Pokemon Info:{pokemonID}</h2>
-      <p>new features coming shortly</p>
-      <div onClick={handleModalClosing}>
+    <div className="modalStyles">
+      <h3>Pokemon Name :{PokemonInfo.name}</h3>
+      {/* <img src={PokemonInfo.sprites.front_shiny} alt="" /> */}
+      <div className="modalCloseButton">
         <Link to='/'>X</Link>
       </div>
-        <button onClick={handleCatchingPokemon}>catch</button>
-    </Modal>
+      <button onClick={handleCatchingPokemon}>catch</button>
+    </div>
+  
   )
 }
 
