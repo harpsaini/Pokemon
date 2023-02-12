@@ -3,7 +3,6 @@ import './App.css';
 import Search from './components/Search';
 import Footer from './components/Footer';
 import {BrowserRouter as Router, Routes, Route,Link} from 'react-router-dom'
-import ModalComponent from './components/ModalComponent'
 import SavedPokemon from './components/SavedPokemon';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
     <Routes>
       <Route exact path='/' element={<Search/>}/>   
       <Route path = '/savedpokemons' element={<SavedPokemon/>}/>
-      <Route path = '/pokemon/:pokemonID' element= {<ModalComponent/>}/>
     </Routes>
     <Footer/>
   </div>
